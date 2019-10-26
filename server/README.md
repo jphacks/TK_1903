@@ -1,24 +1,31 @@
-# README
+# GUS server :smile:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## :cloud: environments
 
-Things you may want to cover:
+- :sushi: ruby 2.6.5
+- :train: Rails 6.0.0
+- :musical_note: yarn
+- :notes: webpacker
+- :art: bulma as Style framework
+- :dizzy: foreman as Process manager
 
-* Ruby version
+## :books: endpoints
 
-* System dependencies
+:construction:
 
-* Configuration
+## :zzz: GPIO pins
 
-* Database creation
+:construction:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+| Connected item | GPIO Number | wiring Pi Numer |
+|:--------------:|:-----------:|:---------------:|
+| Tape LED Blue  | xx          | xx              |
+| Tape LED Red   | xx          | xx              |
+| Indicater LED1 | xx          | xx              |
+| Indicater LED2 | xx          | xx              |
+| Indicater LED3 | xx          | xx              |
+| Indicater LED4 | xx          | xx              |
+| Indicater LED5 | xx          | xx              |
+| Human Sensor   | xx          | xx              |
+| Switch1        | xx          | xx              |
+| Switch2        | xx          | xx              |
