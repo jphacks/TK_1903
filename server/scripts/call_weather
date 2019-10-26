@@ -1,0 +1,7 @@
+#!/bin/sh
+
+while true
+do
+  curl -X POST localhost:5000/api/weather
+  sleep 600
+done

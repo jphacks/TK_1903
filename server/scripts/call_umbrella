@@ -1,0 +1,7 @@
+#!/bin/sh
+
+while true
+do
+  curl -X POST localhost:5000/api/umbrella?umbrella1=$(gpio read 29)&umbrella2=$(gpio read 29)
+  sleep 60
+done

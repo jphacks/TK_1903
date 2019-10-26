@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Macaddr:</strong>
+  <%= @user.macaddr %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @user.zipcode %>
+</p>
+
+<p>
+  <strong>Umbrella1:</strong>
+  <%= @user.umbrella1 %>
+</p>
+
+<p>
+  <strong>Umbrella2:</strong>
+  <%= @user.umbrella2 %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
