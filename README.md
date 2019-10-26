@@ -1,6 +1,6 @@
 # GUS(G(l|r)owing Umbrella Stand)
 
-[![Product Name](image.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
+![GUS](gus_logo.png)
 
 ## 製品概要
 ### Kasata Tech 🏖
