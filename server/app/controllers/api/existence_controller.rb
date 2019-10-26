@@ -4,22 +4,34 @@ class Api::ExistenceController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def update
-    return if params[:exist].to_i.zero?
+    if params[:exist].to_i.zero?
+      turnoff_leds
+    else
+      turnon_leds
+    end
 
-    turnon_leds
-    TurnoffLedJob.set(wait: 1.seconds).perform_later
     render json: { message: 'OK' }, status: :ok
   end
 
   private
 
   def turnon_leds
-    `gpio write #{blue_led_pin} 1`
-    `gpio write #{red_led_pin} 1`
-    `gpio write #{indicater1_pin} 1`
-    `gpio write #{indicater2_pin} 1`
-    `gpio write #{indicater3_pin} 1`
-    `gpio write #{indicater4_pin} 1`
-    `gpio write #{indicater5_pin} 1`
+    `gpio write #{Rails.application.credentials.gpio[:blue]} 1`
+    `gpio write #{Rails.application.credentials.gpio[:red]} 1`
+    `gpio write #{Rails.application.credentials.gpio[:indicater][0]} 1`
+    `gpio write #{Rails.application.credentials.gpio[:indicater][1]} 1`
+    `gpio write #{Rails.application.credentials.gpio[:indicater][2]} 1`
+    `gpio write #{Rails.application.credentials.gpio[:indicater][3]} 1`
+    `gpio write #{Rails.application.credentials.gpio[:indicater][4]} 1`
+  end
+
+  def turnoff_leds
+    `gpio write #{Rails.application.credentials.gpio[:blue]} 0`
+    `gpio write #{Rails.application.credentials.gpio[:red]} 0`
+    `gpio write #{Rails.application.credentials.gpio[:indicater][0]} 0`
+    `gpio write #{Rails.application.credentials.gpio[:indicater][1]} 0`
+    `gpio write #{Rails.application.credentials.gpio[:indicater][2]} 0`
+    `gpio write #{Rails.application.credentials.gpio[:indicater][3]} 0`
+    `gpio write #{Rails.application.credentials.gpio[:indicater][4]} 0`
   end
 end
