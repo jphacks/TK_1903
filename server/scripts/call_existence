@@ -1,7 +1,10 @@
 #!/bin/sh
 
+# wait for server is up
+sleep 60
+
 while true
 do
   curl -X POST "localhost:5000/api/existence?exist=$(gpio read 29)"
-  sleep 1
+  sleep 2
 done

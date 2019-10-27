@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# wait for server is up
+sleep 30
+
+# Initialize wether
+curl -X POST localhost:5000/api/weather
+
 while true
 do
   curl -X POST localhost:5000/api/weather
