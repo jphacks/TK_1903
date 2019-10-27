@@ -29,7 +29,7 @@ class Api::ExistenceController < ApplicationController
 
   def show_weather(zipcode)
     weather = Weather.find_by(zipcode: zipcode)
-    if weather == 'Rain'
+    if weather.main == 'Rain'
       `gpio write #{Rails.application.credentials.gpio[:blue]} 1`
     else
       `gpio write #{Rails.application.credentials.gpio[:red]} 1`
