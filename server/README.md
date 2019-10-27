@@ -9,6 +9,16 @@
 - :art: bulma as Style framework
 - :dizzy: foreman as Process manager
 
+## Usage
+
+```sh
+# Development
+bundle exec foreman s -f Procfile.dev
+
+# on Raspberry pi
+bundle exec foreman s
+```
+
 ## :books: API endpoints
 
 APIエンドポイントの概要です．
