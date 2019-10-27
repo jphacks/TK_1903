@@ -40,7 +40,7 @@ class Api::ExistenceController < ApplicationController
     all_users = User.where(zipcode: zipcode).count
     collected = User.where(zipcode: zipcode, umbrella1: true).or(User.where(zipcode: zipcode, umbrella2: true)).count
     percentage = ((collected.to_f / all_users) * 100).floor
-    case percentage
+    case
     when  0 <= percentage && percentage < 10 then 5
     when 10 <= percentage && percentage < 20 then 4
     when 20 <= percentage && percentage < 40 then 3
