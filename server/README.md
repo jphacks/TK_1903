@@ -9,9 +9,45 @@
 - :art: bulma as Style framework
 - :dizzy: foreman as Process manager
 
-## :books: endpoints
+## :books: API endpoints
 
 :construction:
+
+### `POST /api/weather`
+
+param: none
+
+#### example
+
+```sh
+curl -X POST "localhost:3000/api/weather"
+```
+
+### `POST /api/umbrella`
+
+param: `umbrella1` `Boolean(0/1)`
+- Read from Switch1
+
+param: `umbrella2` `Boolean(0/1)`
+- Read from Switch2
+
+#### example
+
+```sh
+curl -X POST "localhost:3000/api/umbrella?umbrella1=$(gpio read sw1)&umbrella2=$(gpio read sw2)"
+```
+
+### `POST /api/existence`
+
+param: `exist` `Boolean(0/1)`
+- read from Human sensor
+
+#### example
+
+```sh
+curl -X POST "localhost:3000/api/existence?exist=$(gpio read 27)"
+```
+
 
 ## :zzz: GPIO pins
 
@@ -43,4 +79,26 @@ gpio mode 25 out
 gpio mode 27 in
 gpio mode 28 in
 gpio mode 29 in
+```
+
+### Pin ON/OFF
+
+```sh
+gpio write 21 1
+gpio write 22 1
+gpio write 23 1
+gpio write 24 1
+gpio write 25 1
+gpio write 4 1
+gpio write 5 1
+```
+
+```sh
+gpio write 21 0
+gpio write 22 0
+gpio write 23 0
+gpio write 24 0
+gpio write 25 0
+gpio write 4 0
+gpio write 5 0
 ```
