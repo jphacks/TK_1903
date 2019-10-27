@@ -19,13 +19,28 @@
 
 | Connected item | GPIO Number | wiring Pi Numer |
 |:--------------:|:-----------:|:---------------:|
-| Tape LED Blue  | xx          | xx              |
-| Tape LED Red   | xx          | xx              |
-| Indicater LED1 | xx          | xx              |
-| Indicater LED2 | xx          | xx              |
-| Indicater LED3 | xx          | xx              |
-| Indicater LED4 | xx          | xx              |
-| Indicater LED5 | xx          | xx              |
-| Human Sensor   | xx          | xx              |
-| Switch1        | xx          | xx              |
-| Switch2        | xx          | xx              |
+| Tape LED Blue  |  5          |  5              |
+| Tape LED Red   |  4          |  4              |
+| Indicater LED1 | 21          | 21              |
+| Indicater LED2 | 22          | 22              |
+| Indicater LED3 | 23          | 23              |
+| Indicater LED4 | 24          | 24              |
+| Indicater LED5 | 25          | 25              |
+| Human Sensor   | 27          | 27              |
+| Switch1        | 29          | 29              |
+| Switch2        | 28          | 28              |
+
+### Pin mode initialization
+
+```sh
+gpio mode 4 out
+gpio mode 5 out
+gpio mode 21 out
+gpio mode 22 out
+gpio mode 23 out
+gpio mode 24 out
+gpio mode 25 out
+gpio mode 27 in
+gpio mode 28 in
+gpio mode 29 in
+```
