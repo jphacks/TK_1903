@@ -51,8 +51,8 @@ class Api::ExistenceController < ApplicationController
   end
 
   def show_neighbor(zipcode)
-    1.upto(calc_unbring_umbrella(zipcode)) do |i|
-      `gpio write #{Rails.application.credentials.gpio[:indicater][i - 1]} 1`
+    calc_unbring_umbrella(zipcode).times do |i|
+      `gpio write #{Rails.application.credentials.gpio[:indicater][i]} 1`
     end
   end
 
