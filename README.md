@@ -1,7 +1,7 @@
 # GUS (Glowing Umbrella Stand)
 
 ![GUS](gus_logo.png)
-[![gus](image.png)]()
+[![gus](thumbnail.png)](https://youtu.be/9GuaFgKod3Q)
 
 ## 製品概要
 ### 傘立て × Tech
