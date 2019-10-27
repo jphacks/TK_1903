@@ -1,0 +1,12 @@
+#!/bin/sh
+
+gpio mode 4 out
+gpio mode 5 out
+gpio mode 21 out
+gpio mode 22 out
+gpio mode 23 out
+gpio mode 24 out
+gpio mode 25 out
+gpio mode 27 in
+gpio mode 28 in
+gpio mode 29 in
