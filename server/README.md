@@ -11,7 +11,7 @@
 
 ## :books: API endpoints
 
-:construction:
+APIエンドポイントの概要です．
 
 ### `POST /api/weather`
 
@@ -34,7 +34,7 @@ param: `umbrella2` `Boolean(0/1)`
 #### example
 
 ```sh
-curl -X POST "localhost:3000/api/umbrella?umbrella1=$(gpio read sw1)&umbrella2=$(gpio read sw2)"
+curl -X POST "localhost:3000/api/umbrella?umbrella1=$(gpio read 28)&umbrella2=$(gpio read 29)"
 ```
 
 ### `POST /api/existence`
