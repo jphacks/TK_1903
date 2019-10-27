@@ -36,17 +36,17 @@ class Api::ExistenceController < ApplicationController
     end
   end
 
-  def calc_bring_umbrella(zipcode)
+  def calc_unbring_umbrella(zipcode)
     all_users = User.where(zipcode: zipcode).count
-    collected = User.where(zipcode: zipcode, umbrella1: false).or(User.where(zipcode: zipcode, umbrella2: false)).count
+    collected = User.where(zipcode: zipcode, umbrella1: true).or(User.where(zipcode: zipcode, umbrella2: true)).count
     percentage = ((collected.to_f / all_users) * 100).floor
     case percentage
-    when  0 <= percentage && percentage < 10 then 0
-    when 10 <= percentage && percentage < 20 then 1
-    when 20 <= percentage && percentage < 40 then 2
-    when 40 <= percentage && percentage < 60 then 3
-    when 60 <= percentage && percentage < 80 then 4
-    else 5
+    when  0 <= percentage && percentage < 10 then 5
+    when 10 <= percentage && percentage < 20 then 4
+    when 20 <= percentage && percentage < 40 then 3
+    when 40 <= percentage && percentage < 60 then 2
+    when 60 <= percentage && percentage < 80 then 1
+    else 0
     end
   end
 
